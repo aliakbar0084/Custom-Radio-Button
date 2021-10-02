@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Custom Radio Button</title>
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 1.2em;
+    padding: 0 0.5em;
+}
+.btn input{
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.btn input::before,
+.btn input::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+}
+.btn input:checked::before{
+    background: #000;
+    transform: translate(-50%,-50%);
+}
+.btn input::after{
+    width: 10px;
+    height: 10px;
+    background: none;
+    border: 2px solid #000;
+    border-radius: 50px;
+    transform: translate(-80%, -50%);
+    transition: all .4s;
+}
+.btn input:checked::after{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    transform: translate(-15%, -50%);
+    z-index: 10;
+}
+.btn label{
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>The Coders Space</p>
+        <div class="btn">
+            <input type="radio" name="Like" id="Like">
+            <label for="Like">Like</label>
+        </div>
+        <div class="btn">
+            <input type="radio" name="Share" id="Share">
+            <label for="Share">Share</label>
+        </div>
+        <div class="btn">
+            <input type="radio" name="Subscribe" id="Subscribe">
+            <label for="Subscribe">Subscribe</label>
+        </div>
+    </div>
+</body>
+</html>
